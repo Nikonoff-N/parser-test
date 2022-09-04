@@ -1,0 +1,13 @@
+{% extends 'adminlte/base.html' %}
+
+<!-- Set title of app -->
+{% block title %}Index{% endblock %}
+
+<!-- Specify content of main body of page -->
+{% block content %}
+<h1>{{article.title}}</h1>
+<p> {% for tag in article.tags.all%} #{{tag}}{%endfor%}</p>
+{% autoescape off %}
+{{article.content}}
+{% endautoescape %}
+{% endblock %}

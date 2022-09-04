@@ -20,5 +20,6 @@ class Article(models.Model):
     source = models.ForeignKey(ArticleSource,on_delete=models.CASCADE)
     pub_date = models.DateTimeField()
     tags = models.ManyToManyField(Tag, verbose_name=("tag"))
+    url = models.URLField(default="")
     def __str__(self) -> str:
         return self.title
