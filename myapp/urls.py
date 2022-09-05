@@ -20,6 +20,7 @@ schema_view = get_schema_view(
 )
 
 
+
 # router = routers.SimpleRouter()
 # router.register(r'articles', views.ArticleList,basename='Article')
 # router.register(r'tags', views.TagList,basename='Tag')
@@ -30,6 +31,8 @@ urlpatterns = [
     path('article/<int:articleId>', views.details, name='details'),
     path('api-auth/', include('rest_framework.urls')),
     path('api/articles', views.ArticleList.as_view(), name='articleApi'),
+    re_path('api/articles/(?P<date>.+)/$', views.ArticleByDate.as_view(),name='articleByDateApi'),
+    re_path('api/articles/(?P<tag>.+)/$', views.ArticleByTag.as_view(),name='articleByTagApi'),
     path('api/tags', views.TagList.as_view(), name='tagApi'),
     path('api/sources', views.SourceList.as_view(), name='sourceApi'),
 
