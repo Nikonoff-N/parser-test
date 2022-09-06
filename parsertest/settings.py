@@ -100,11 +100,11 @@ WSGI_APPLICATION = 'parsertest.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('MYSQL_DATABASE', 'mysql-db'),
+        'NAME': 'parser',
         'USER': 'root',
         'PASSWORD': 'admin',
-        'HOST': os.environ.get('MYSQL_DATABASE_HOST', 'db'),
-        'PORT': os.environ.get('MYSQL_DATABASE_PORT', 3306),
+        'HOST': 'localhost',
+        'PORT': 3306,
     }
 }
 
