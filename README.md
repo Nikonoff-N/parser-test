@@ -31,11 +31,18 @@ DATABASES = {
         'PORT': 3306,
     }
 }
+
 3. Произведите миграции выполнив python manage.py migrate
+
 4. Спарсите новости python manage.py parseNews
+
 5. Запустите сервер python manage.py runserver
+
 6. По адресу http://127.0.0.1:8000/ доступен просмотр записей
+
 7. По адрессу http://127.0.0.1:8000/admin - админка 
+
 для доступа нужна учётная запись, её можно созздать выполнив python manage.py createsuperuser
+
 8. По адресу http://127.0.0.1:8000/swagger - документация к API
  
