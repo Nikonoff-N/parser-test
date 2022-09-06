@@ -51,7 +51,7 @@ DATABASES = {
 
 7. По адрессу http://127.0.0.1:8000/admin - админка 
 
-для доступа нужна учётная запись, её можно созздать выполнив python manage.py createsuperuser
+для доступа нужна учётная запись, её можно создать ,выполнив python manage.py createsuperuser
 
 8. По адресу http://127.0.0.1:8000/swagger - документация к API
  
