@@ -22,14 +22,23 @@
 Пример:
 
 DATABASES = {
+
     'default': {
+    
         'ENGINE': 'django.db.backends.mysql',
+        
         'NAME': 'parser',
+        
         'USER': 'root',
+        
         'PASSWORD': 'admin',
+        
         'HOST': 'localhost',
+        
         'PORT': 3306,
+        
     }
+    
 }
 
 3. Произведите миграции выполнив python manage.py migrate
