@@ -29,6 +29,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('', views.index, name='index'),
     path('article/<int:articleId>', views.details, name='details'),
+    path('logout/',views.logoutView,name = 'logout'),
     path('api-auth/', include('rest_framework.urls')),
     path('api/articles', views.ArticleList.as_view(), name='articleApi'),
     re_path('api/articles/(?P<date>.+)/$', views.ArticleByDate.as_view(),name='articleByDateApi'),

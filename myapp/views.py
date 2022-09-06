@@ -12,7 +12,10 @@ from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from django.utils import timezone
 from datetime import datetime,timedelta
+from django.contrib.auth import authenticate, login, logout
+from django.urls import reverse
 TZ = timezone.get_current_timezone()
+
 # Create your views here.
 def index(request):
     template = loader.get_template('myapp/index.html')
@@ -28,7 +31,9 @@ def details(request,articleId):
     context = {"article":article}
     return HttpResponse(template.render(context, request))
 
-
+def logoutView(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('index', args=()))
 
 
 class ArticleList(APIView):
