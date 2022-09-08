@@ -55,3 +55,9 @@ DATABASES = {
 
 8. По адресу http://127.0.0.1:8000/swagger - документация к API
  
+API ENDPOINTS:
+/articles - список всех статей
+/articles/{date} - все статьи по дате
+/articles/{tag} - все статьи по тегу
+
+/tags - список всех тегов
