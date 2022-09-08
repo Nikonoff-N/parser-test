@@ -1,6 +1,6 @@
 from django.db import models
 from tinymce.models import HTMLField
-# Create your models here.
+# self explainatory isnt it?
 
 class ArticleSource(models.Model):
     name = models.CharField(max_length=256)

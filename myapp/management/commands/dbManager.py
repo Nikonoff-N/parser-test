@@ -1,7 +1,12 @@
 from datetime import datetime
 from ...models import *
 
+#this module used for db management
+#prints are save as it is not supposed to be used in runtime
+#only for one time use
+
 def addSource(name:str)->ArticleSource:
+    ''' adds source if doesnt exist, return source object for propper db managent'''
     try:
         s = ArticleSource.objects.get(name = name)
         print("source alredy exists")
@@ -13,6 +18,7 @@ def addSource(name:str)->ArticleSource:
         return s
 
 def addTag(text:str,source:ArticleSource)->Tag:
+    ''' adds tag if doesnt exist, return tag object for propper db managent'''
     try:
         t = Tag.objects.get(text = text,source = source)
         print(f"Tag {text} alredy exists")   
@@ -24,6 +30,7 @@ def addTag(text:str,source:ArticleSource)->Tag:
         return t
 
 def addArticle(title:str,source:ArticleSource,content:str,pub_date:datetime,tags:list[Tag],url:str)->None:
+    ''' adds article if doesnt exist, return article object for propper db managent'''
     try:
         a = Article.objects.get(title = title,source = source)
         print(f"Article {title} alredy exists")

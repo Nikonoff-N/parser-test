@@ -1,6 +1,8 @@
 from rest_framework import routers, serializers, viewsets
 from .models import *
 
+#data serializers for each model
+
 class ArticleSourceSerializer(serializers.ModelSerializer):
     class Meta:
         model = ArticleSource
@@ -11,10 +13,8 @@ class TagSerializer(serializers.ModelSerializer):
         model = Tag
         fields = ['text',]
 
-# Serializers define the API representation.
 class ArticleSerializer(serializers.ModelSerializer):
-    # source = serializers.HyperlinkedRelatedField(view_name='sourceApi',format='html',read_only=True)
-    # tags = serializers.HyperlinkedRelatedField(many=True,view_name='tagApi',format='html',read_only=True)
+    #this one refeerences othor models s it has some custom fields
     tags = TagSerializer(read_only=True, many=True)
     source = ArticleSourceSerializer(read_only=True)
     class Meta:
